@@ -1,6 +1,6 @@
 {
   "name": "canvas-proxy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Proxy server for Canvas LMS API to bypass CORS restrictions",
   "main": "api/index.js",
   "scripts": {
