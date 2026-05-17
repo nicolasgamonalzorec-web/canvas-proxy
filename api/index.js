@@ -514,7 +514,7 @@ const dashboardHTML = `<!DOCTYPE html>
 // Endpoint: servir dashboard desde la raíz
 app.get('/', (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.send(dashboardHTML);
+  res.send('TEST: Dashboard loaded successfully');
 });
 
 // Endpoint: obtener todos los datos (cursos, calificaciones, tareas)
