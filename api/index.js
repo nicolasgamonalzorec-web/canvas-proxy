@@ -514,7 +514,7 @@ const dashboardHTML = `<!DOCTYPE html>
 // Endpoint: servir dashboard desde la raíz
 app.get('/', (req, res) => {
   res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.send('TEST: Dashboard loaded successfully');
+  res.send(dashboardHTML);
 });
 
 // Endpoint: obtener todos los datos (cursos, calificaciones, tareas)
@@ -671,4 +671,3 @@ app.listen(PORT, () => {
 });
 
 module.exports = app;
-// Force redeploy Sun May 17 17:20:28 UTC 2026
