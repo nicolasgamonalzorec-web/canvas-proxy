@@ -9,8 +9,27 @@ const CANVAS_TOKEN = '9374~rRXPJtTTBkt3TBmDQ3VtL37TFQzBNKrtEkG7HWuJTTH9xkvQLfteR
 const CANVAS_BASE_URL = 'https://uandes.instructure.com/api/v1';
 const COURSE_IDS = [43224, 43233, 43851, 13339, 44585, 44612, 44045, 44849, 43450];
 
-// Middleware
-app.use(cors());
+// Middleware - CORS configuration
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'OPTIONS', 'HEAD'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: false,
+  maxAge: 86400
+}));
+
+// Preflight handler
+app.options('*', cors());
+
+// Explicit CORS headers middleware to ensure all responses have CORS headers
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, HEAD');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Max-Age', '86400');
+  next();
+});
+
 app.use(express.json());
 
 // Cache simple (reinicia cada hora)
