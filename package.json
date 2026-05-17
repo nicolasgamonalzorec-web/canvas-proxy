@@ -1,0 +1,18 @@
+{
+  "name": "canvas-proxy",
+  "version": "1.0.0",
+  "description": "Proxy server for Canvas LMS API to bypass CORS restrictions",
+  "main": "api/index.js",
+  "scripts": {
+    "dev": "node api/index.js",
+    "start": "node api/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.6.11"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
